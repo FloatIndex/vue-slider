@@ -19,7 +19,7 @@
 
 .item {
     height: 100%;
-    display: none;
+    /* display: none; */
     position: relative;
 }
 
@@ -29,9 +29,9 @@
     object-fit: cover;
 }
 
-.item.active {
+/* .item.active {
     display: block;
-}
+} */
 
 .item .text {
     position: absolute;
@@ -63,21 +63,27 @@
     opacity: 1;
 }
 
-.prev, .next {
-    width: 20px;
-    height: 20px;
-    margin: 10px 0;
+.next, .prev {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
     border-radius: 50%;
-    background: #ccc;
+    background-color: #ccc;
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
-    cursor: pointer;
+    transform: translateX(-50%);
+    color: #5c5c5c;
     z-index: 999;
+    cursor: pointer;
+}
+
+.prev {
+    top: 10px;
 }
 
 .next {
-    bottom: 0;
+    bottom: 10px;
 }
 
 .prev::after {
