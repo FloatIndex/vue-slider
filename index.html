@@ -13,7 +13,7 @@
    <div class="container" id="app">
         <div class="items">
             
-            <div class="item">
+            <div class="item" v-on:mouseover="stopSlideshow" v-on:mouseleave="slideshow">
                 <img :src="items[active].photo">
                 <div class="text">
                     <h3>{{items[active].title}}</h3>
@@ -26,12 +26,17 @@
 
         <div class="thumbs">
             
-            <div class="thumb" v-for="(item, index) in items" :class=" (index == active) ? 'active' : '' ">
+            <div
+                class="thumb"
+                v-for="(item, index) in items"
+                :class=" (index == active) ? 'active' : '' "
+                @click="setActive(index)"
+            >
                 <img :src="item.photo">
             </div> 
            
-            <div class="prev" @click="prevActive()"></div>
-            <div class="next" @click="nextActive()"></div>
+            <div class="prev" @click="prevThumb()"></div>
+            <div class="next" @click="nextThumb()"></div>
         </div>
    </div>
 
